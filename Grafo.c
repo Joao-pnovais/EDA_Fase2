@@ -248,79 +248,21 @@ bool imprimirDFS(Grafo* g) {
 
 
 /**
- * @brief Verifica se dois segmentos se cruzam e calcula o ponto de interseção.
- * @param x1,y1,x2,y2 Coordenadas do primeiro segmento.
- * @param x3,y3,x4,y4 Coordenadas do segundo segmento.
- * @param ix Ponteiro para guardar a coordenada x da interseção.
- * @param iy Ponteiro para guardar a coordenada y da interseção.
- * @return true se cruzam, false caso contrário.
+ * @brief Verufuca ponto médio entre dois segmentos de antenas.
+ *@param x1, y1 Coordenadas do primeiro ponto do primeiro segmento.
+ *@param x2, y2 Coordenadas do segundo ponto do primeiro segmento.
+ *@param x3, y3 Coordenadas do primeiro ponto do segundo segmento.
+ *@param x4, y4 Coordenadas do segundo ponto do segundo segmento.
+ *@param mx Ponteiro para armazenar a coordenada x do ponto médio.
+ *@param my Ponteiro para armazenar a coordenada y do ponto médio.
+ *@return true se o ponto médio foi calculado, false caso contrário
  */
-
-// Função auxiliar para verificar se dois segmentos se cruzam e calcular o ponto de interseção
-bool segmentosCruzam(int x1, int y1, int x2, int y2,
-                     int x3, int y3, int x4, int y4, float* ix, float* iy) {
-    float denom = (float)((x1 - x2)*(y3 - y4) - (y1 - y2)*(x3 - x4));
-    if (denom == 0) return false; // Paralelos
-
-    float intersecaoX = ((x1*y2 - y1*x2)*(x3 - x4) - (x1 - x2)*(x3*y4 - y3*x4)) / denom;
-    float intersecaoY = ((x1*y2 - y1*x2)*(y3 - y4) - (y1 - y2)*(x3*y4 - y3*x4)) / denom;
-
-    // Verifica se o ponto está dentro dos dois segmentos
-    if (intersecaoX < fmin(x1, x2) || intersecaoX > fmax(x1, x2) ||
-        intersecaoX < fmin(x3, x4) || intersecaoX > fmax(x3, x4) ||
-        intersecaoY < fmin(y1, y2) || intersecaoY > fmax(y1, y2) ||
-        intersecaoY < fmin(y3, y4) || intersecaoY > fmax(y3, y4))
-        return false;
-
-    *ix = intersecaoX;
-    *iy = intersecaoY;
-    return true;
-}
-
-/**
- * @brief Lista as interseções entre segmentos de dois tipos de antenas.
- * @param g Ponteiro para o grafo.
- * @param freq1 Frequência do primeiro tipo de antena.
- * @param freq2 Frequência do segundo tipo de antena.
- * @return true se encontrou interseções, false caso contrário.
- */
-
-bool listarIntersecoesAntenasTipos(Grafo* g, char freq1, char freq2) {
-    if (!g || !g->listaAntenas) return false; // Grafo vazio
-    printf("Interseções reais entre segmentos %c-%c e %c-%c:\n", freq1, freq1, freq2, freq2);
-    bool encontrou = false;
-    VAntena* a1 = g->listaAntenas;
-    VAntena* a2 = a1->proximo;
-    VAntena* b1 = g->listaAntenas;
-    VAntena* b2 = b1->proximo;
-
-
-    // Para cada par de antenas freq1 (ex: A-A)
-    for (a1 = g->listaAntenas; a1 != NULL; a1 = a1->proximo) {
-        if (a1->frequencia != freq1) continue;
-        for (a2 = a1->proximo; a2 != NULL; a2 = a2->proximo) {
-            if (a2->frequencia != freq1) continue;
-            // Para cada par de antenas freq2 (ex: B-B)
-            for (b1 = g->listaAntenas; b1 != NULL; b1 = b1->proximo) {
-                if (b1->frequencia != freq2) continue;
-                for (b2 = b1->proximo; b2 != NULL; b2 = b2->proximo) {
-                    if (b2->frequencia != freq2) continue;
-                    float ix, iy;
-                    if (segmentosCruzam(a1->linha, a1->coluna, a2->linha, a2->coluna,
-                                        b1->linha, b1->coluna, b2->linha, b2->coluna,
-                                        &ix, &iy)) {
-                        printf("Segmento %c(%d,%d)-%c(%d,%d) x %c(%d,%d)-%c(%d,%d) -> Interseção em (%.2f,%.2f)\n",
-                            a1->frequencia, a1->linha, a1->coluna, a2->frequencia, a2->linha, a2->coluna,
-                            b1->frequencia, b1->linha, b1->coluna, b2->frequencia, b2->linha, b2->coluna,
-                            ix, iy);
-                        encontrou = true;
-                    }
-                }
-            }
-        }
-    }
-    if (!encontrou) return false; // Nenhuma interseção encontrada
-    return encontrou;// Interseções encontradas
+bool pontoMedioSegmentos(int x1, int y1, int x2, int y2,
+                         int x3, int y3, int x4, int y4,
+                         float* mx, float* my) {
+    *mx = (x1 + x2 + x3 + x4) / 4.0;
+    *my = (y1 + y2 + y3 + y4) / 4.0;
+    return true;// Retorna verdadeiro se o ponto médio foi calculado
 }
 
 /**

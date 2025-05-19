@@ -90,28 +90,22 @@ bool DFS(VAntena* ant);
 bool imprimirDFS(Grafo* g);
 
 /**
- * @brief Verifica se dois segmentos de antenas cruzam.
- * @param x1, y1 Coordenadas do primeiro ponto do primeiro segmento.
- * @param x2, y2 Coordenadas do segundo ponto do primeiro segmento.
- * @param x3, y3 Coordenadas do primeiro ponto do segundo segmento.
- * @param x4, y4 Coordenadas do segundo ponto do segundo segmento.
- * @param ix Ponteiro para armazenar a coordenada x da interseção.
- * @param iy Ponteiro para armazenar a coordenada y da interseção.
- * @return true se cruzam, false caso contrário.
+ * @brief Verufuca ponto médio entre dois segmentos de antenas.
+ *@param x1, y1 Coordenadas do primeiro ponto do primeiro segmento.
+ *@param x2, y2 Coordenadas do segundo ponto do primeiro segmento.
+ *@param x3, y3 Coordenadas do primeiro ponto do segundo segmento.
+ *@param x4, y4 Coordenadas do segundo ponto do segundo segmento.
+ *@param mx Ponteiro para armazenar a coordenada x do ponto médio.
+ *@param my Ponteiro para armazenar a coordenada y do ponto médio.
+ *@return true se o ponto médio foi calculado, false caso contrário
  */
-bool segmentosCruzam(int x1, int y1, int x2, int y2,
-    int x3, int y3, int x4, int y4, float* ix, float* iy);
-
-
-/**
- * @brief Lê uma matriz de antenas de um ficheiro de texto e insere no grafo.
- * @param g Ponteiro para o grafo.
- * @param filename Nome do ficheiro de texto.
- * @param linhas Ponteiro para guardar o número de linhas.
- * @param colunas Ponteiro para guardar o número de colunas.
- * @return true se leu e inseriu com sucesso, false caso contrário.
- */
-bool listarIntersecoesAntenasTipos(Grafo* g, char freq1, char freq2);
+bool pontoMedioSegmentos(int x1, int y1, int x2, int y2,
+                         int x3, int y3, int x4, int y4,
+                         float* mx, float* my) {
+    *mx = (x1 + x2 + x3 + x4) / 4.0;
+    *my = (y1 + y2 + y3 + y4) / 4.0;
+    return true;// Retorna verdadeiro se o ponto médio foi calculado
+}
 
 /**
  * @brief Executa uma busca em profundidade (DFS) a partir de uma antena.
