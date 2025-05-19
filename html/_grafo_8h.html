@@ -128,12 +128,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a29be217267833ebf2143a670d57bba9f" id="r_a29be217267833ebf2143a670d57bba9f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a29be217267833ebf2143a670d57bba9f">imprimirDFS</a> (<a class="el" href="struct_grafo.html">Grafo</a> *g)</td></tr>
 <tr class="memdesc:a29be217267833ebf2143a670d57bba9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Imprime o resultado do DFS para todo o grafo.  <br /></td></tr>
 <tr class="separator:a29be217267833ebf2143a670d57bba9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af2dec3552987856cf9d7568d0e8277a7" id="r_af2dec3552987856cf9d7568d0e8277a7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af2dec3552987856cf9d7568d0e8277a7">segmentosCruzam</a> (int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4, float *ix, float *iy)</td></tr>
-<tr class="memdesc:af2dec3552987856cf9d7568d0e8277a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se dois segmentos de antenas cruzam.  <br /></td></tr>
-<tr class="separator:af2dec3552987856cf9d7568d0e8277a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae95a091998073c68553fa97308349295" id="r_ae95a091998073c68553fa97308349295"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae95a091998073c68553fa97308349295">listarIntersecoesAntenasTipos</a> (<a class="el" href="struct_grafo.html">Grafo</a> *g, char freq1, char freq2)</td></tr>
-<tr class="memdesc:ae95a091998073c68553fa97308349295"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lê uma matriz de antenas de um ficheiro de texto e insere no grafo.  <br /></td></tr>
-<tr class="separator:ae95a091998073c68553fa97308349295"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a954058507a7f77ef364d2bb26571019a" id="r_a954058507a7f77ef364d2bb26571019a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a954058507a7f77ef364d2bb26571019a">pontoMedioSegmentos</a> (int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4, float *mx, float *my)</td></tr>
+<tr class="memdesc:a954058507a7f77ef364d2bb26571019a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verufuca ponto médio entre dois segmentos de antenas.  <br /></td></tr>
+<tr class="separator:a954058507a7f77ef364d2bb26571019a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae195eed9d14a29c3318695c812e3a784" id="r_ae195eed9d14a29c3318695c812e3a784"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae195eed9d14a29c3318695c812e3a784">DFS_Antena</a> (<a class="el" href="struct_v_antena.html">VAntena</a> *atual, bool *visitado)</td></tr>
 <tr class="memdesc:ae195eed9d14a29c3318695c812e3a784"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executa uma busca em profundidade (DFS) a partir de uma antena.  <br /></td></tr>
 <tr class="separator:ae195eed9d14a29c3318695c812e3a784"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -470,51 +467,78 @@ Ponteiro para o grafo criado, ou NULL em caso de erro. </dd></dl>
 
 </div>
 </div>
-<a id="ae95a091998073c68553fa97308349295" name="ae95a091998073c68553fa97308349295"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae95a091998073c68553fa97308349295">&#9670;&#160;</a></span>listarIntersecoesAntenasTipos()</h2>
+<a id="a954058507a7f77ef364d2bb26571019a" name="a954058507a7f77ef364d2bb26571019a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a954058507a7f77ef364d2bb26571019a">&#9670;&#160;</a></span>pontoMedioSegmentos()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool listarIntersecoesAntenasTipos </td>
+          <td class="memname">bool pontoMedioSegmentos </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_grafo.html">Grafo</a> *</td>          <td class="paramname"><span class="paramname"><em>g</em></span>, </td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>x1</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em>freq1</em></span>, </td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>y1</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em>freq2</em></span>&#160;)</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>x2</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>y2</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>x3</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>y3</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>x4</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>y4</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *</td>          <td class="paramname"><span class="paramname"><em>mx</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float *</td>          <td class="paramname"><span class="paramname"><em>my</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Lê uma matriz de antenas de um ficheiro de texto e insere no grafo. </p>
+<p>Verufuca ponto médio entre dois segmentos de antenas. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">g</td><td>Ponteiro para o grafo. </td></tr>
-    <tr><td class="paramname">filename</td><td>Nome do ficheiro de texto. </td></tr>
-    <tr><td class="paramname">linhas</td><td>Ponteiro para guardar o número de linhas. </td></tr>
-    <tr><td class="paramname">colunas</td><td>Ponteiro para guardar o número de colunas. </td></tr>
+    <tr><td class="paramname">x1,y1</td><td>Coordenadas do primeiro ponto do primeiro segmento. </td></tr>
+    <tr><td class="paramname">x2,y2</td><td>Coordenadas do segundo ponto do primeiro segmento. </td></tr>
+    <tr><td class="paramname">x3,y3</td><td>Coordenadas do primeiro ponto do segundo segmento. </td></tr>
+    <tr><td class="paramname">x4,y4</td><td>Coordenadas do segundo ponto do segundo segmento. </td></tr>
+    <tr><td class="paramname">mx</td><td>Ponteiro para armazenar a coordenada x do ponto médio. </td></tr>
+    <tr><td class="paramname">my</td><td>Ponteiro para armazenar a coordenada y do ponto médio. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true se leu e inseriu com sucesso, false caso contrário.</dd></dl>
-<p>Lê uma matriz de antenas de um ficheiro de texto e insere no grafo.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">g</td><td>Ponteiro para o grafo. </td></tr>
-    <tr><td class="paramname">freq1</td><td>Frequência do primeiro tipo de antena. </td></tr>
-    <tr><td class="paramname">freq2</td><td>Frequência do segundo tipo de antena. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>true se encontrou interseções, false caso contrário. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>true se o ponto médio foi calculado, false caso contrário </dd></dl>
 
 </div>
 </div>
@@ -652,92 +676,6 @@ Ponteiro para o grafo criado, ou NULL em caso de erro. </dd></dl>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true se removido, false se não encontrado. </dd></dl>
-
-</div>
-</div>
-<a id="af2dec3552987856cf9d7568d0e8277a7" name="af2dec3552987856cf9d7568d0e8277a7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af2dec3552987856cf9d7568d0e8277a7">&#9670;&#160;</a></span>segmentosCruzam()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool segmentosCruzam </td>
-          <td>(</td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>x1</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>y1</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>x2</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>y2</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>x3</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>y3</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>x4</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>y4</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float *</td>          <td class="paramname"><span class="paramname"><em>ix</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float *</td>          <td class="paramname"><span class="paramname"><em>iy</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Verifica se dois segmentos de antenas cruzam. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">x1,y1</td><td>Coordenadas do primeiro ponto do primeiro segmento. </td></tr>
-    <tr><td class="paramname">x2,y2</td><td>Coordenadas do segundo ponto do primeiro segmento. </td></tr>
-    <tr><td class="paramname">x3,y3</td><td>Coordenadas do primeiro ponto do segundo segmento. </td></tr>
-    <tr><td class="paramname">x4,y4</td><td>Coordenadas do segundo ponto do segundo segmento. </td></tr>
-    <tr><td class="paramname">ix</td><td>Ponteiro para armazenar a coordenada x da interseção. </td></tr>
-    <tr><td class="paramname">iy</td><td>Ponteiro para armazenar a coordenada y da interseção. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>true se cruzam, false caso contrário.</dd></dl>
-<p>Verifica se dois segmentos de antenas cruzam.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">x1,y1,x2,y2</td><td>Coordenadas do primeiro segmento. </td></tr>
-    <tr><td class="paramname">x3,y3,x4,y4</td><td>Coordenadas do segundo segmento. </td></tr>
-    <tr><td class="paramname">ix</td><td>Ponteiro para guardar a coordenada x da interseção. </td></tr>
-    <tr><td class="paramname">iy</td><td>Ponteiro para guardar a coordenada y da interseção. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>true se cruzam, false caso contrário. </dd></dl>
 
 </div>
 </div>

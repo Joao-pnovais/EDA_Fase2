@@ -37,10 +37,8 @@ bool \mbox{\hyperlink{_grafo_8c_a42bfbe95fb9429c30cf98da0b1789f89}{DFS}} (\mbox{
 \begin{DoxyCompactList}\small\item\em Executa uma busca em profundidade (DFS) a partir de uma antena. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{_grafo_8c_a29be217267833ebf2143a670d57bba9f}{imprimir\+DFS}} (\mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*}g)
 \begin{DoxyCompactList}\small\item\em Imprime o resultado do DFS para todo o grafo. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{_grafo_8c_af2dec3552987856cf9d7568d0e8277a7}{segmentos\+Cruzam}} (int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4, float \texorpdfstring{$\ast$}{*}ix, float \texorpdfstring{$\ast$}{*}iy)
-\begin{DoxyCompactList}\small\item\em Verifica se dois segmentos se cruzam e calcula o ponto de interseção. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{_grafo_8c_ae95a091998073c68553fa97308349295}{listar\+Intersecoes\+Antenas\+Tipos}} (\mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*}g, char freq1, char freq2)
-\begin{DoxyCompactList}\small\item\em Lista as interseções entre segmentos de dois tipos de antenas. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{_grafo_8c_a954058507a7f77ef364d2bb26571019a}{ponto\+Medio\+Segmentos}} (int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4, float \texorpdfstring{$\ast$}{*}mx, float \texorpdfstring{$\ast$}{*}my)
+\begin{DoxyCompactList}\small\item\em Verufuca ponto médio entre dois segmentos de antenas. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{_grafo_8c_ae195eed9d14a29c3318695c812e3a784}{DFS\+\_\+\+Antena}} (\mbox{\hyperlink{struct_v_antena}{VAntena}} \texorpdfstring{$\ast$}{*}atual, bool \texorpdfstring{$\ast$}{*}visitado)
 \begin{DoxyCompactList}\small\item\em Executa uma busca em profundidade (DFS) a partir de uma antena. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{_grafo_8c_a33d98aad757d7851b6124ca5419a793e}{DFSTraversal\+\_\+\+Antena}} (\mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*}g)
@@ -250,29 +248,33 @@ Limpa o campo \textquotesingle{}visitado\textquotesingle{} de todas as antenas.
 \begin{DoxyReturn}{Returns}
 true após limpar. 
 \end{DoxyReturn}
-\Hypertarget{_grafo_8c_ae95a091998073c68553fa97308349295}\index{Grafo.c@{Grafo.c}!listarIntersecoesAntenasTipos@{listarIntersecoesAntenasTipos}}
-\index{listarIntersecoesAntenasTipos@{listarIntersecoesAntenasTipos}!Grafo.c@{Grafo.c}}
-\doxysubsubsection{\texorpdfstring{listarIntersecoesAntenasTipos()}{listarIntersecoesAntenasTipos()}}
-{\footnotesize\ttfamily \label{_grafo_8c_ae95a091998073c68553fa97308349295} 
-bool listar\+Intersecoes\+Antenas\+Tipos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*}}]{g}{, }\item[{char}]{freq1}{, }\item[{char}]{freq2}{}\end{DoxyParamCaption})}
+\Hypertarget{_grafo_8c_a954058507a7f77ef364d2bb26571019a}\index{Grafo.c@{Grafo.c}!pontoMedioSegmentos@{pontoMedioSegmentos}}
+\index{pontoMedioSegmentos@{pontoMedioSegmentos}!Grafo.c@{Grafo.c}}
+\doxysubsubsection{\texorpdfstring{pontoMedioSegmentos()}{pontoMedioSegmentos()}}
+{\footnotesize\ttfamily \label{_grafo_8c_a954058507a7f77ef364d2bb26571019a} 
+bool ponto\+Medio\+Segmentos (\begin{DoxyParamCaption}\item[{int}]{x1}{, }\item[{int}]{y1}{, }\item[{int}]{x2}{, }\item[{int}]{y2}{, }\item[{int}]{x3}{, }\item[{int}]{y3}{, }\item[{int}]{x4}{, }\item[{int}]{y4}{, }\item[{float \texorpdfstring{$\ast$}{*}}]{mx}{, }\item[{float \texorpdfstring{$\ast$}{*}}]{my}{}\end{DoxyParamCaption})}
 
 
 
-Lista as interseções entre segmentos de dois tipos de antenas. 
-
-Lê uma matriz de antenas de um ficheiro de texto e insere no grafo.
+Verufuca ponto médio entre dois segmentos de antenas. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em g} & Ponteiro para o grafo. \\
+{\em x1,y1} & Coordenadas do primeiro ponto do primeiro segmento. \\
 \hline
-{\em freq1} & Frequência do primeiro tipo de antena. \\
+{\em x2,y2} & Coordenadas do segundo ponto do primeiro segmento. \\
 \hline
-{\em freq2} & Frequência do segundo tipo de antena. \\
+{\em x3,y3} & Coordenadas do primeiro ponto do segundo segmento. \\
+\hline
+{\em x4,y4} & Coordenadas do segundo ponto do segundo segmento. \\
+\hline
+{\em mx} & Ponteiro para armazenar a coordenada x do ponto médio. \\
+\hline
+{\em my} & Ponteiro para armazenar a coordenada y do ponto médio. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-true se encontrou interseções, false caso contrário. 
+true se o ponto médio foi calculado, false caso contrário 
 \end{DoxyReturn}
 \Hypertarget{_grafo_8c_a0ef4d348d36a2ccd18efa6af75db5754}\index{Grafo.c@{Grafo.c}!procurarAntena@{procurarAntena}}
 \index{procurarAntena@{procurarAntena}!Grafo.c@{Grafo.c}}
@@ -345,30 +347,4 @@ Remove uma antena do grafo.
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 true se removido, false se não encontrado. 
-\end{DoxyReturn}
-\Hypertarget{_grafo_8c_af2dec3552987856cf9d7568d0e8277a7}\index{Grafo.c@{Grafo.c}!segmentosCruzam@{segmentosCruzam}}
-\index{segmentosCruzam@{segmentosCruzam}!Grafo.c@{Grafo.c}}
-\doxysubsubsection{\texorpdfstring{segmentosCruzam()}{segmentosCruzam()}}
-{\footnotesize\ttfamily \label{_grafo_8c_af2dec3552987856cf9d7568d0e8277a7} 
-bool segmentos\+Cruzam (\begin{DoxyParamCaption}\item[{int}]{x1}{, }\item[{int}]{y1}{, }\item[{int}]{x2}{, }\item[{int}]{y2}{, }\item[{int}]{x3}{, }\item[{int}]{y3}{, }\item[{int}]{x4}{, }\item[{int}]{y4}{, }\item[{float \texorpdfstring{$\ast$}{*}}]{ix}{, }\item[{float \texorpdfstring{$\ast$}{*}}]{iy}{}\end{DoxyParamCaption})}
-
-
-
-Verifica se dois segmentos se cruzam e calcula o ponto de interseção. 
-
-Verifica se dois segmentos de antenas cruzam.
-
-
-\begin{DoxyParams}{Parameters}
-{\em x1,y1,x2,y2} & Coordenadas do primeiro segmento. \\
-\hline
-{\em x3,y3,x4,y4} & Coordenadas do segundo segmento. \\
-\hline
-{\em ix} & Ponteiro para guardar a coordenada x da interseção. \\
-\hline
-{\em iy} & Ponteiro para guardar a coordenada y da interseção. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-true se cruzam, false caso contrário. 
 \end{DoxyReturn}

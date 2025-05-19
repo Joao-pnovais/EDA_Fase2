@@ -29,18 +29,20 @@
 \DoxyCodeLine{00084\ }
 \DoxyCodeLine{00090\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{_grafo_8h_a29be217267833ebf2143a670d57bba9f}{imprimirDFS}}(\mbox{\hyperlink{struct_grafo}{Grafo}}*\ g);}
 \DoxyCodeLine{00091\ }
-\DoxyCodeLine{00102\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{_grafo_8h_af2dec3552987856cf9d7568d0e8277a7}{segmentosCruzam}}(\textcolor{keywordtype}{int}\ x1,\ \textcolor{keywordtype}{int}\ y1,\ \textcolor{keywordtype}{int}\ x2,\ \textcolor{keywordtype}{int}\ y2,}
-\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{int}\ x3,\ \textcolor{keywordtype}{int}\ y3,\ \textcolor{keywordtype}{int}\ x4,\ \textcolor{keywordtype}{int}\ y4,\ \textcolor{keywordtype}{float}*\ ix,\ \textcolor{keywordtype}{float}*\ iy);}
-\DoxyCodeLine{00104\ }
-\DoxyCodeLine{00105\ }
-\DoxyCodeLine{00114\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{_grafo_8h_ae95a091998073c68553fa97308349295}{listarIntersecoesAntenasTipos}}(\mbox{\hyperlink{struct_grafo}{Grafo}}*\ g,\ \textcolor{keywordtype}{char}\ freq1,\ \textcolor{keywordtype}{char}\ freq2);}
-\DoxyCodeLine{00115\ }
-\DoxyCodeLine{00122\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{_grafo_8h_ae195eed9d14a29c3318695c812e3a784}{DFS\_Antena}}(\mbox{\hyperlink{struct_v_antena}{VAntena}}*\ atual,\ \textcolor{keywordtype}{bool}*\ visitado);}
-\DoxyCodeLine{00123\ }
-\DoxyCodeLine{00129\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{_grafo_8h_a33d98aad757d7851b6124ca5419a793e}{DFSTraversal\_Antena}}(\mbox{\hyperlink{struct_grafo}{Grafo}}*\ g);}
-\DoxyCodeLine{00130\ }
-\DoxyCodeLine{00139\ \mbox{\hyperlink{struct_v_antena}{VAntena}}*\ \mbox{\hyperlink{_grafo_8h_a0ef4d348d36a2ccd18efa6af75db5754}{procurarAntena}}(\mbox{\hyperlink{struct_grafo}{Grafo}}*\ g,\ \textcolor{keywordtype}{char}\ freq,\ \textcolor{keywordtype}{int}\ linha,\ \textcolor{keywordtype}{int}\ coluna);}
-\DoxyCodeLine{00140\ }
-\DoxyCodeLine{00141\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00102\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{_grafo_8h_a954058507a7f77ef364d2bb26571019a}{pontoMedioSegmentos}}(\textcolor{keywordtype}{int}\ x1,\ \textcolor{keywordtype}{int}\ y1,\ \textcolor{keywordtype}{int}\ x2,\ \textcolor{keywordtype}{int}\ y2,}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ x3,\ \textcolor{keywordtype}{int}\ y3,\ \textcolor{keywordtype}{int}\ x4,\ \textcolor{keywordtype}{int}\ y4,}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}*\ mx,\ \textcolor{keywordtype}{float}*\ my)\ \{}
+\DoxyCodeLine{00105\ \ \ \ \ *mx\ =\ (x1\ +\ x2\ +\ x3\ +\ x4)\ /\ 4.0;}
+\DoxyCodeLine{00106\ \ \ \ \ *my\ =\ (y1\ +\ y2\ +\ y3\ +\ y4)\ /\ 4.0;}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};\textcolor{comment}{//\ Retorna\ verdadeiro\ se\ o\ ponto\ médio\ foi\ calculado}}
+\DoxyCodeLine{00108\ \}}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00116\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{_grafo_8h_ae195eed9d14a29c3318695c812e3a784}{DFS\_Antena}}(\mbox{\hyperlink{struct_v_antena}{VAntena}}*\ atual,\ \textcolor{keywordtype}{bool}*\ visitado);}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00123\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{_grafo_8h_a33d98aad757d7851b6124ca5419a793e}{DFSTraversal\_Antena}}(\mbox{\hyperlink{struct_grafo}{Grafo}}*\ g);}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00133\ \mbox{\hyperlink{struct_v_antena}{VAntena}}*\ \mbox{\hyperlink{_grafo_8h_a0ef4d348d36a2ccd18efa6af75db5754}{procurarAntena}}(\mbox{\hyperlink{struct_grafo}{Grafo}}*\ g,\ \textcolor{keywordtype}{char}\ freq,\ \textcolor{keywordtype}{int}\ linha,\ \textcolor{keywordtype}{int}\ coluna);}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}
