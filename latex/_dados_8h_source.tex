@@ -1,0 +1,34 @@
+\doxysection{Dados.\+h}
+\hypertarget{_dados_8h_source}{}\label{_dados_8h_source}\mbox{\hyperlink{_dados_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ DADOS\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ DADOS\_H}}
+\DoxyCodeLine{00017\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_adjacente}{Adjacente}}\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_v_antena}{VAntena}}*\ destino;}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_adjacente}{Adjacente}}*\ proximo;}
+\DoxyCodeLine{00020\ \}\ \mbox{\hyperlink{_dados_8h_aaf8d838b51951d29be56e29a7721ee83}{Adjacente}};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_v_antena}{VAntena}}\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{char}\ frequencia;}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{int}\ linha,\ coluna;}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{bool}\ visitado;}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_adjacente}{Adjacente}}*\ listaAdj;}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_v_antena}{VAntena}}*\ proximo;}
+\DoxyCodeLine{00034\ \}\ \mbox{\hyperlink{_dados_8h_a6191b45e06c8290153770ecf14bf205c}{VAntena}};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_grafo}{Grafo}}\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{struct_v_antena}{VAntena}}*\ listaAntenas;}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{int}\ numAntenas;}
+\DoxyCodeLine{00044\ \}\ \mbox{\hyperlink{_dados_8h_adab04f64457aac52a13e71e40915bd43}{Grafo}};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00052\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_efeito_nefasto}{EfeitoNefasto}}\ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{int}\ linha,\ coluna;}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{char}\ frequencia;}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_efeito_nefasto}{EfeitoNefasto}}*\ proximo;}
+\DoxyCodeLine{00056\ \}\ \mbox{\hyperlink{_dados_8h_a6167db7f1ec0c34503d24b77b3613bfa}{EfeitoNefasto}};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

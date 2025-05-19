@@ -1,0 +1,103 @@
+\doxysection{Ficheiros.\+c File Reference}
+\hypertarget{_ficheiros_8c}{}\label{_ficheiros_8c}\index{Ficheiros.c@{Ficheiros.c}}
+
+
+Funções para ler e escrever o grafo em ficheiros.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include "{}Antena.\+h"{}}\newline
+{\ttfamily \#include "{}Grafo.\+h"{}}\newline
+{\ttfamily \#include "{}Nefasto.\+h"{}}\newline
+{\ttfamily \#include "{}Ficheiros.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{_ficheiros_8c_aa7943e6a1dcb02f07c4a2ac9c88d529a}{ler\+Matriz\+Antenas}} (\mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*}g, const char \texorpdfstring{$\ast$}{*}filename, int \texorpdfstring{$\ast$}{*}linhas, int \texorpdfstring{$\ast$}{*}colunas)
+\begin{DoxyCompactList}\small\item\em Lê uma matriz de antenas de um ficheiro de texto e insere no grafo. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{_ficheiros_8c_a66d6ad03390935cfd89ec4cb6d73d444}{guardar\+Binario}} (const char \texorpdfstring{$\ast$}{*}filename, \mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*}g)
+\begin{DoxyCompactList}\small\item\em Guarda o grafo num ficheiro binário. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{_ficheiros_8c_a25889e6111d5db093e673d1fcc33aa15}{ler\+Binario}} (const char \texorpdfstring{$\ast$}{*}filename, \mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*}g)
+\begin{DoxyCompactList}\small\item\em Lê um grafo de um ficheiro binário. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Funções para ler e escrever o grafo em ficheiros. 
+
+\begin{DoxyAuthor}{Author}
+João Novais 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2025-\/05-\/18 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_ficheiros_8c_a66d6ad03390935cfd89ec4cb6d73d444}\index{Ficheiros.c@{Ficheiros.c}!guardarBinario@{guardarBinario}}
+\index{guardarBinario@{guardarBinario}!Ficheiros.c@{Ficheiros.c}}
+\doxysubsubsection{\texorpdfstring{guardarBinario()}{guardarBinario()}}
+{\footnotesize\ttfamily \label{_ficheiros_8c_a66d6ad03390935cfd89ec4cb6d73d444} 
+bool guardar\+Binario (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{filename}{, }\item[{\mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*}}]{g}{}\end{DoxyParamCaption})}
+
+
+
+Guarda o grafo num ficheiro binário. 
+
+Guarda o grafo em ficheiro binário.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Nome do ficheiro binário. \\
+\hline
+{\em g} & Ponteiro para o grafo. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se guardou, false caso contrário. 
+\end{DoxyReturn}
+\Hypertarget{_ficheiros_8c_a25889e6111d5db093e673d1fcc33aa15}\index{Ficheiros.c@{Ficheiros.c}!lerBinario@{lerBinario}}
+\index{lerBinario@{lerBinario}!Ficheiros.c@{Ficheiros.c}}
+\doxysubsubsection{\texorpdfstring{lerBinario()}{lerBinario()}}
+{\footnotesize\ttfamily \label{_ficheiros_8c_a25889e6111d5db093e673d1fcc33aa15} 
+bool ler\+Binario (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{filename}{, }\item[{\mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*}}]{g}{}\end{DoxyParamCaption})}
+
+
+
+Lê um grafo de um ficheiro binário. 
+
+Lê o grafo de um ficheiro binário.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Nome do ficheiro binário. \\
+\hline
+{\em g} & Ponteiro para o grafo. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se leu, false caso contrário. 
+\end{DoxyReturn}
+\Hypertarget{_ficheiros_8c_aa7943e6a1dcb02f07c4a2ac9c88d529a}\index{Ficheiros.c@{Ficheiros.c}!lerMatrizAntenas@{lerMatrizAntenas}}
+\index{lerMatrizAntenas@{lerMatrizAntenas}!Ficheiros.c@{Ficheiros.c}}
+\doxysubsubsection{\texorpdfstring{lerMatrizAntenas()}{lerMatrizAntenas()}}
+{\footnotesize\ttfamily \label{_ficheiros_8c_aa7943e6a1dcb02f07c4a2ac9c88d529a} 
+bool ler\+Matriz\+Antenas (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*}}]{g}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{filename}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{linhas}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{colunas}{}\end{DoxyParamCaption})}
+
+
+
+Lê uma matriz de antenas de um ficheiro de texto e insere no grafo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Ponteiro para o grafo. \\
+\hline
+{\em filename} & Nome do ficheiro de texto. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se leu e inseriu com sucesso, false caso contrário. 
+\end{DoxyReturn}

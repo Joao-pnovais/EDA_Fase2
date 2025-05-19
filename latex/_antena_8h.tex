@@ -1,0 +1,184 @@
+\doxysection{Antena.\+h File Reference}
+\hypertarget{_antena_8h}{}\label{_antena_8h}\index{Antena.h@{Antena.h}}
+
+
+Funções relacionadas às antenas.  
+
+
+{\ttfamily \#include "{}Dados.\+h"{}}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_v_antena}{VAntena}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_antena_8h_af93290ae2527806c8e233276ac56d185}{criar\+Antena}} (char freq, int linha, int coluna)
+\begin{DoxyCompactList}\small\item\em Cria uma nova antena. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{_antena_8h_a415e35f4b25f37909da93f6534fbe34f}{inserir\+Antena}} (\mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*}g, char freq, int linha, int coluna)
+\begin{DoxyCompactList}\small\item\em Insere uma antena no grafo. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{_antena_8h_a35f1b501b4bce2e84a31e05c7d927b44}{Remover\+Antena}} (\mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*}g, char freq, int linha, int coluna)
+\begin{DoxyCompactList}\small\item\em Remove uma antena da lista ligada do grafo. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{_antena_8h_a5bc5848d0511185756a52aff74979435}{posicao\+Ocupada}} (\mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*}g, int linha, int coluna)
+\begin{DoxyCompactList}\small\item\em Verifica se uma posição está ocupada por uma antena. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Funções relacionadas às antenas. 
+
+\begin{DoxyAuthor}{Author}
+João Novais 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2025-\/05-\/18 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_antena_8h_af93290ae2527806c8e233276ac56d185}\index{Antena.h@{Antena.h}!criarAntena@{criarAntena}}
+\index{criarAntena@{criarAntena}!Antena.h@{Antena.h}}
+\doxysubsubsection{\texorpdfstring{criarAntena()}{criarAntena()}}
+{\footnotesize\ttfamily \label{_antena_8h_af93290ae2527806c8e233276ac56d185} 
+\mbox{\hyperlink{struct_v_antena}{VAntena}} \texorpdfstring{$\ast$}{*} criar\+Antena (\begin{DoxyParamCaption}\item[{char}]{freq}{, }\item[{int}]{linha}{, }\item[{int}]{coluna}{}\end{DoxyParamCaption})}
+
+
+
+Cria uma nova antena. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em freq} & Frequência da antena. \\
+\hline
+{\em linha} & Linha da antena. \\
+\hline
+{\em coluna} & Coluna da antena. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ponteiro para a antena criada.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em freq} & Frequência da antena. \\
+\hline
+{\em linha} & Linha da antena. \\
+\hline
+{\em coluna} & Coluna da antena. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ponteiro para a antena criada, ou NULL em caso de erro. 
+\end{DoxyReturn}
+\Hypertarget{_antena_8h_a415e35f4b25f37909da93f6534fbe34f}\index{Antena.h@{Antena.h}!inserirAntena@{inserirAntena}}
+\index{inserirAntena@{inserirAntena}!Antena.h@{Antena.h}}
+\doxysubsubsection{\texorpdfstring{inserirAntena()}{inserirAntena()}}
+{\footnotesize\ttfamily \label{_antena_8h_a415e35f4b25f37909da93f6534fbe34f} 
+bool inserir\+Antena (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*}}]{g}{, }\item[{char}]{freq}{, }\item[{int}]{linha}{, }\item[{int}]{coluna}{}\end{DoxyParamCaption})}
+
+
+
+Insere uma antena no grafo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Ponteiro para o grafo. \\
+\hline
+{\em freq} & Frequência. \\
+\hline
+{\em linha} & Linha. \\
+\hline
+{\em coluna} & Coluna. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se inserida, false caso contrário.
+\end{DoxyReturn}
+Insere uma antena no grafo.
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Ponteiro para o grafo. \\
+\hline
+{\em freq} & Frequência da antena. \\
+\hline
+{\em linha} & Linha da antena. \\
+\hline
+{\em coluna} & Coluna da antena. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se inserido, false caso contrário. 
+\end{DoxyReturn}
+\Hypertarget{_antena_8h_a5bc5848d0511185756a52aff74979435}\index{Antena.h@{Antena.h}!posicaoOcupada@{posicaoOcupada}}
+\index{posicaoOcupada@{posicaoOcupada}!Antena.h@{Antena.h}}
+\doxysubsubsection{\texorpdfstring{posicaoOcupada()}{posicaoOcupada()}}
+{\footnotesize\ttfamily \label{_antena_8h_a5bc5848d0511185756a52aff74979435} 
+bool posicao\+Ocupada (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*}}]{g}{, }\item[{int}]{linha}{, }\item[{int}]{coluna}{}\end{DoxyParamCaption})}
+
+
+
+Verifica se uma posição está ocupada por uma antena. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Ponteiro para o grafo. \\
+\hline
+{\em linha} & Linha. \\
+\hline
+{\em coluna} & Coluna. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se ocupada, false caso contrário.
+\end{DoxyReturn}
+Verifica se uma posição está ocupada por uma antena.
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Ponteiro para o grafo. \\
+\hline
+{\em linha} & Linha a verificar. \\
+\hline
+{\em coluna} & Coluna a verificar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se a posição está ocupada, false caso contrário. 
+\end{DoxyReturn}
+\Hypertarget{_antena_8h_a35f1b501b4bce2e84a31e05c7d927b44}\index{Antena.h@{Antena.h}!RemoverAntena@{RemoverAntena}}
+\index{RemoverAntena@{RemoverAntena}!Antena.h@{Antena.h}}
+\doxysubsubsection{\texorpdfstring{RemoverAntena()}{RemoverAntena()}}
+{\footnotesize\ttfamily \label{_antena_8h_a35f1b501b4bce2e84a31e05c7d927b44} 
+bool Remover\+Antena (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*}}]{g}{, }\item[{char}]{freq}{, }\item[{int}]{linha}{, }\item[{int}]{coluna}{}\end{DoxyParamCaption})}
+
+
+
+Remove uma antena da lista ligada do grafo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Ponteiro para o grafo. \\
+\hline
+{\em freq} & Frequência. \\
+\hline
+{\em linha} & Linha. \\
+\hline
+{\em coluna} & Coluna. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se removida, false caso contrário.
+\end{DoxyReturn}
+Remove uma antena da lista ligada do grafo.
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Ponteiro para o grafo. \\
+\hline
+{\em freq} & Frequência da antena. \\
+\hline
+{\em linha} & Linha da antena. \\
+\hline
+{\em coluna} & Coluna da antena. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se removido, false se não encontrado. 
+\end{DoxyReturn}

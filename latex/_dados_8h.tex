@@ -1,0 +1,84 @@
+\doxysection{Dados.\+h File Reference}
+\hypertarget{_dados_8h}{}\label{_dados_8h}\index{Dados.h@{Dados.h}}
+
+
+Estruturas de dados para o grafo de antenas e efeitos nefastos.  
+
+
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_adjacente}{Adjacente}}
+\begin{DoxyCompactList}\small\item\em Estrutura para representar um grafo de antenas. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_v_antena}{VAntena}}
+\begin{DoxyCompactList}\small\item\em Estrutura para representar uma antena. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_grafo}{Grafo}}
+\begin{DoxyCompactList}\small\item\em Estrutura para representar o grafo de antenas. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_efeito_nefasto}{Efeito\+Nefasto}}
+\begin{DoxyCompactList}\small\item\em Estrutura para representar um efeito nefasto. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct Adjacente \mbox{\hyperlink{_dados_8h_aaf8d838b51951d29be56e29a7721ee83}{Adjacente}}
+\begin{DoxyCompactList}\small\item\em Estrutura para representar um grafo de antenas. \end{DoxyCompactList}\item 
+typedef struct VAntena \mbox{\hyperlink{_dados_8h_a6191b45e06c8290153770ecf14bf205c}{VAntena}}
+\begin{DoxyCompactList}\small\item\em Estrutura para representar uma antena. \end{DoxyCompactList}\item 
+typedef struct Grafo \mbox{\hyperlink{_dados_8h_adab04f64457aac52a13e71e40915bd43}{Grafo}}
+\begin{DoxyCompactList}\small\item\em Estrutura para representar o grafo de antenas. \end{DoxyCompactList}\item 
+typedef struct Efeito\+Nefasto \mbox{\hyperlink{_dados_8h_a6167db7f1ec0c34503d24b77b3613bfa}{Efeito\+Nefasto}}
+\begin{DoxyCompactList}\small\item\em Estrutura para representar um efeito nefasto. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Estruturas de dados para o grafo de antenas e efeitos nefastos. 
+
+\begin{DoxyAuthor}{Author}
+João Novais 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2025-\/05-\/18 
+\end{DoxyDate}
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{_dados_8h_aaf8d838b51951d29be56e29a7721ee83}\index{Dados.h@{Dados.h}!Adjacente@{Adjacente}}
+\index{Adjacente@{Adjacente}!Dados.h@{Dados.h}}
+\doxysubsubsection{\texorpdfstring{Adjacente}{Adjacente}}
+{\footnotesize\ttfamily \label{_dados_8h_aaf8d838b51951d29be56e29a7721ee83} 
+typedef struct Adjacente Adjacente}
+
+
+
+Estrutura para representar um grafo de antenas. 
+
+Cada antena é representada por um nó na lista ligada, e cada nó contém uma lista de adjacências. \Hypertarget{_dados_8h_a6167db7f1ec0c34503d24b77b3613bfa}\index{Dados.h@{Dados.h}!EfeitoNefasto@{EfeitoNefasto}}
+\index{EfeitoNefasto@{EfeitoNefasto}!Dados.h@{Dados.h}}
+\doxysubsubsection{\texorpdfstring{EfeitoNefasto}{EfeitoNefasto}}
+{\footnotesize\ttfamily \label{_dados_8h_a6167db7f1ec0c34503d24b77b3613bfa} 
+typedef struct Efeito\+Nefasto Efeito\+Nefasto}
+
+
+
+Estrutura para representar um efeito nefasto. 
+
+Cada efeito nefasto tem coordenadas (linha e coluna), uma frequência e um ponteiro para o próximo efeito nefasto. \Hypertarget{_dados_8h_adab04f64457aac52a13e71e40915bd43}\index{Dados.h@{Dados.h}!Grafo@{Grafo}}
+\index{Grafo@{Grafo}!Dados.h@{Dados.h}}
+\doxysubsubsection{\texorpdfstring{Grafo}{Grafo}}
+{\footnotesize\ttfamily \label{_dados_8h_adab04f64457aac52a13e71e40915bd43} 
+typedef struct Grafo Grafo}
+
+
+
+Estrutura para representar o grafo de antenas. 
+
+Contém um ponteiro para a lista de antenas e o número total de antenas. \Hypertarget{_dados_8h_a6191b45e06c8290153770ecf14bf205c}\index{Dados.h@{Dados.h}!VAntena@{VAntena}}
+\index{VAntena@{VAntena}!Dados.h@{Dados.h}}
+\doxysubsubsection{\texorpdfstring{VAntena}{VAntena}}
+{\footnotesize\ttfamily \label{_dados_8h_a6191b45e06c8290153770ecf14bf205c} 
+typedef struct VAntena VAntena}
+
+
+
+Estrutura para representar uma antena. 
+
+Cada antena tem uma frequência, coordenadas (linha e coluna), um indicador de visitado e uma lista de adjacências. 

@@ -1,0 +1,187 @@
+\doxysection{Nefasto.\+h File Reference}
+\hypertarget{_nefasto_8h}{}\label{_nefasto_8h}\index{Nefasto.h@{Nefasto.h}}
+
+
+Funções para manipulação de efeitos nefastos.  
+
+
+{\ttfamily \#include "{}Dados.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_efeito_nefasto}{Efeito\+Nefasto}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_nefasto_8h_a217d9ca0da8de2c68c22a3f967f2090f}{Criar\+Nafsto}} (int linha, int coluna)
+\begin{DoxyCompactList}\small\item\em Cria um novo efeito nefasto. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_efeito_nefasto}{Efeito\+Nefasto}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_nefasto_8h_ab8aa9d7dabc8bc0a56cd3704e90198bf}{inserir\+Efeito}} (\mbox{\hyperlink{struct_efeito_nefasto}{Efeito\+Nefasto}} \texorpdfstring{$\ast$}{*}lista, int linha, int coluna, char freq)
+\begin{DoxyCompactList}\small\item\em Insere um efeito nefasto na lista. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_efeito_nefasto}{Efeito\+Nefasto}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_nefasto_8h_a8b157b93acd796197620104556b422e1}{calcular\+Efeitos\+Nefastos}} (\mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*}g, bool \texorpdfstring{$\ast$}{*}status)
+\begin{DoxyCompactList}\small\item\em Calcula todos os efeitos nefastos do grafo. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{_nefasto_8h_a10058f40744629324ae0dec9f1a72589}{existe\+Efeito}} (\mbox{\hyperlink{struct_efeito_nefasto}{Efeito\+Nefasto}} \texorpdfstring{$\ast$}{*}lista, int linha, int coluna)
+\begin{DoxyCompactList}\small\item\em Verifica se já existe um efeito nefasto numa posição. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{_nefasto_8h_a58287cc884ff96dab3ba1ba7994f95b5}{imprimir\+Efeitos\+Nefastos}} (\mbox{\hyperlink{struct_efeito_nefasto}{Efeito\+Nefasto}} \texorpdfstring{$\ast$}{*}lista)
+\begin{DoxyCompactList}\small\item\em Imprime a lista de efeitos nefastos. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{_nefasto_8h_aee9a4d5ae92a4864c0500aec96b29fd9}{escrever\+Mapa\+Com\+Efeitos}} (const char \texorpdfstring{$\ast$}{*}filename, \mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*}g, \mbox{\hyperlink{struct_efeito_nefasto}{Efeito\+Nefasto}} \texorpdfstring{$\ast$}{*}efeitos, int linhas, int colunas)
+\begin{DoxyCompactList}\small\item\em Escreve o mapa atualizado no ficheiro, colocando \textquotesingle{}\#\textquotesingle{} onde há efeito nefasto. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Funções para manipulação de efeitos nefastos. 
+
+\begin{DoxyAuthor}{Author}
+João Novais 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2025-\/05-\/18 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_nefasto_8h_a8b157b93acd796197620104556b422e1}\index{Nefasto.h@{Nefasto.h}!calcularEfeitosNefastos@{calcularEfeitosNefastos}}
+\index{calcularEfeitosNefastos@{calcularEfeitosNefastos}!Nefasto.h@{Nefasto.h}}
+\doxysubsubsection{\texorpdfstring{calcularEfeitosNefastos()}{calcularEfeitosNefastos()}}
+{\footnotesize\ttfamily \label{_nefasto_8h_a8b157b93acd796197620104556b422e1} 
+\mbox{\hyperlink{struct_efeito_nefasto}{Efeito\+Nefasto}} \texorpdfstring{$\ast$}{*} calcular\+Efeitos\+Nefastos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*}}]{g}{, }\item[{bool \texorpdfstring{$\ast$}{*}}]{status}{}\end{DoxyParamCaption})}
+
+
+
+Calcula todos os efeitos nefastos do grafo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Ponteiro para o grafo. \\
+\hline
+{\em status} & Ponteiro para bool que indica se encontrou efeitos. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Lista ligada de efeitos nefastos encontrados, ou NULL se nenhum. 
+\end{DoxyReturn}
+\Hypertarget{_nefasto_8h_a217d9ca0da8de2c68c22a3f967f2090f}\index{Nefasto.h@{Nefasto.h}!CriarNafsto@{CriarNafsto}}
+\index{CriarNafsto@{CriarNafsto}!Nefasto.h@{Nefasto.h}}
+\doxysubsubsection{\texorpdfstring{CriarNafsto()}{CriarNafsto()}}
+{\footnotesize\ttfamily \label{_nefasto_8h_a217d9ca0da8de2c68c22a3f967f2090f} 
+\mbox{\hyperlink{struct_efeito_nefasto}{Efeito\+Nefasto}} \texorpdfstring{$\ast$}{*} Criar\+Nafsto (\begin{DoxyParamCaption}\item[{int}]{linha}{, }\item[{int}]{coluna}{}\end{DoxyParamCaption})}
+
+
+
+Cria um novo efeito nefasto. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em linha} & Linha do efeito. \\
+\hline
+{\em coluna} & Coluna do efeito. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ponteiro para o efeito criado. 
+\end{DoxyReturn}
+\Hypertarget{_nefasto_8h_aee9a4d5ae92a4864c0500aec96b29fd9}\index{Nefasto.h@{Nefasto.h}!escreverMapaComEfeitos@{escreverMapaComEfeitos}}
+\index{escreverMapaComEfeitos@{escreverMapaComEfeitos}!Nefasto.h@{Nefasto.h}}
+\doxysubsubsection{\texorpdfstring{escreverMapaComEfeitos()}{escreverMapaComEfeitos()}}
+{\footnotesize\ttfamily \label{_nefasto_8h_aee9a4d5ae92a4864c0500aec96b29fd9} 
+bool escrever\+Mapa\+Com\+Efeitos (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{filename}{, }\item[{\mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*}}]{g}{, }\item[{\mbox{\hyperlink{struct_efeito_nefasto}{Efeito\+Nefasto}} \texorpdfstring{$\ast$}{*}}]{efeitos}{, }\item[{int}]{linhas}{, }\item[{int}]{colunas}{}\end{DoxyParamCaption})}
+
+
+
+Escreve o mapa atualizado no ficheiro, colocando \textquotesingle{}\#\textquotesingle{} onde há efeito nefasto. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Nome do ficheiro a escrever. \\
+\hline
+{\em g} & Ponteiro para o grafo. \\
+\hline
+{\em efeitos} & Lista de efeitos nefastos. \\
+\hline
+{\em linhas} & Número de linhas do mapa. \\
+\hline
+{\em colunas} & Número de colunas do mapa. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_nefasto_8h_a10058f40744629324ae0dec9f1a72589}\index{Nefasto.h@{Nefasto.h}!existeEfeito@{existeEfeito}}
+\index{existeEfeito@{existeEfeito}!Nefasto.h@{Nefasto.h}}
+\doxysubsubsection{\texorpdfstring{existeEfeito()}{existeEfeito()}}
+{\footnotesize\ttfamily \label{_nefasto_8h_a10058f40744629324ae0dec9f1a72589} 
+bool existe\+Efeito (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_efeito_nefasto}{Efeito\+Nefasto}} \texorpdfstring{$\ast$}{*}}]{lista}{, }\item[{int}]{linha}{, }\item[{int}]{coluna}{}\end{DoxyParamCaption})}
+
+
+
+Verifica se já existe um efeito nefasto numa posição. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & Lista de efeitos nefastos. \\
+\hline
+{\em linha} & Linha. \\
+\hline
+{\em coluna} & Coluna. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se já existe, false caso contrário.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & Lista de efeitos nefastos. \\
+\hline
+{\em linha} & Linha a verificar. \\
+\hline
+{\em coluna} & Coluna a verificar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se já existe, false caso contrário. 
+\end{DoxyReturn}
+\Hypertarget{_nefasto_8h_a58287cc884ff96dab3ba1ba7994f95b5}\index{Nefasto.h@{Nefasto.h}!imprimirEfeitosNefastos@{imprimirEfeitosNefastos}}
+\index{imprimirEfeitosNefastos@{imprimirEfeitosNefastos}!Nefasto.h@{Nefasto.h}}
+\doxysubsubsection{\texorpdfstring{imprimirEfeitosNefastos()}{imprimirEfeitosNefastos()}}
+{\footnotesize\ttfamily \label{_nefasto_8h_a58287cc884ff96dab3ba1ba7994f95b5} 
+bool imprimir\+Efeitos\+Nefastos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_efeito_nefasto}{Efeito\+Nefasto}} \texorpdfstring{$\ast$}{*}}]{lista}{}\end{DoxyParamCaption})}
+
+
+
+Imprime a lista de efeitos nefastos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & Lista de efeitos nefastos. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{_nefasto_8h_ab8aa9d7dabc8bc0a56cd3704e90198bf}\index{Nefasto.h@{Nefasto.h}!inserirEfeito@{inserirEfeito}}
+\index{inserirEfeito@{inserirEfeito}!Nefasto.h@{Nefasto.h}}
+\doxysubsubsection{\texorpdfstring{inserirEfeito()}{inserirEfeito()}}
+{\footnotesize\ttfamily \label{_nefasto_8h_ab8aa9d7dabc8bc0a56cd3704e90198bf} 
+\mbox{\hyperlink{struct_efeito_nefasto}{Efeito\+Nefasto}} \texorpdfstring{$\ast$}{*} inserir\+Efeito (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_efeito_nefasto}{Efeito\+Nefasto}} \texorpdfstring{$\ast$}{*}}]{lista}{, }\item[{int}]{linha}{, }\item[{int}]{coluna}{, }\item[{char}]{freq}{}\end{DoxyParamCaption})}
+
+
+
+Insere um efeito nefasto na lista. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & Lista de efeitos nefastos. \\
+\hline
+{\em linha} & Linha. \\
+\hline
+{\em coluna} & Coluna. \\
+\hline
+{\em freq} & Frequência. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ponteiro para o início da lista atualizada.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & Lista de efeitos nefastos. \\
+\hline
+{\em linha} & Linha do novo efeito. \\
+\hline
+{\em coluna} & Coluna do novo efeito. \\
+\hline
+{\em freq} & Frequência associada ao efeito. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ponteiro para o início da lista atualizada. 
+\end{DoxyReturn}

@@ -1,0 +1,546 @@
+\doxysection{funcao.\+c File Reference}
+\hypertarget{funcao_8c}{}\label{funcao_8c}\index{funcao.c@{funcao.c}}
+
+
+Implementação das funções para manipulação de grafos de antenas.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include "{}Dados.\+h"{}}\newline
+{\ttfamily \#include "{}funcao.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{funcao_8c_af5cf618621b693d94215a263da3ba5ff}{criar\+Grafo}} ()
+\begin{DoxyCompactList}\small\item\em Cria um grafo vazio. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{funcao_8c_ab05f27279a4cc2cb1b03e00e78dfedb2}{imprimir\+Grafo}} (\mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*}g)
+\begin{DoxyCompactList}\small\item\em Imprime todas as antenas e as suas ligações do grafo. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{funcao_8c_a7a6da1fda39659501215074d3a8788ac}{remover\+Adjacente}} (\mbox{\hyperlink{struct_v_antena}{VAntena}} \texorpdfstring{$\ast$}{*}origem, \mbox{\hyperlink{struct_v_antena}{VAntena}} \texorpdfstring{$\ast$}{*}destino)
+\begin{DoxyCompactList}\small\item\em Remove a ligação de origem para destino. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{funcao_8c_ab7c88f6d161bedc19b108cfadc221194}{remover\+Vertice}} (\mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*}g, char freq, int linha, int coluna)
+\begin{DoxyCompactList}\small\item\em Remove um vértice (antena) do grafo, removendo também todas as adjacências para ele. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_v_antena}{VAntena}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{funcao_8c_af93290ae2527806c8e233276ac56d185}{criar\+Antena}} (char freq, int linha, int coluna)
+\begin{DoxyCompactList}\small\item\em Cria uma nova antena. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{funcao_8c_a35f1b501b4bce2e84a31e05c7d927b44}{Remover\+Antena}} (\mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*}g, char freq, int linha, int coluna)
+\begin{DoxyCompactList}\small\item\em Remove uma antena da lista ligada do grafo (não remove adjacências). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{funcao_8c_a5bc5848d0511185756a52aff74979435}{posicao\+Ocupada}} (\mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*}g, int linha, int coluna)
+\begin{DoxyCompactList}\small\item\em Verifica se já existe uma antena na posição dada. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{funcao_8c_a415e35f4b25f37909da93f6534fbe34f}{inserir\+Antena}} (\mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*}g, char freq, int linha, int coluna)
+\begin{DoxyCompactList}\small\item\em Insere uma antena no grafo, se a posição estiver livre. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_efeito_nefasto}{Efeito\+Nefasto}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{funcao_8c_a217d9ca0da8de2c68c22a3f967f2090f}{Criar\+Nafsto}} (int linha, int coluna)
+\begin{DoxyCompactList}\small\item\em Cria um novo efeito nefasto. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_efeito_nefasto}{Efeito\+Nefasto}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{funcao_8c_ab8aa9d7dabc8bc0a56cd3704e90198bf}{inserir\+Efeito}} (\mbox{\hyperlink{struct_efeito_nefasto}{Efeito\+Nefasto}} \texorpdfstring{$\ast$}{*}lista, int linha, int coluna, char freq)
+\begin{DoxyCompactList}\small\item\em Insere um efeito nefasto na lista. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{funcao_8c_a10058f40744629324ae0dec9f1a72589}{existe\+Efeito}} (\mbox{\hyperlink{struct_efeito_nefasto}{Efeito\+Nefasto}} \texorpdfstring{$\ast$}{*}lista, int linha, int coluna)
+\begin{DoxyCompactList}\small\item\em Verifica se já existe um efeito nefasto numa posição. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_efeito_nefasto}{Efeito\+Nefasto}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{funcao_8c_a8b157b93acd796197620104556b422e1}{calcular\+Efeitos\+Nefastos}} (\mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*}g, bool \texorpdfstring{$\ast$}{*}status)
+\begin{DoxyCompactList}\small\item\em Calcula todos os efeitos nefastos do grafo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{funcao_8c_ad0c23f36e58880b080d13826d070151b}{imprimir\+Efeitos\+Nefastos}} (\mbox{\hyperlink{struct_efeito_nefasto}{Efeito\+Nefasto}} \texorpdfstring{$\ast$}{*}lista)
+\begin{DoxyCompactList}\small\item\em Imprime a lista de efeitos nefastos. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{funcao_8c_a531bf86b73f7d374e94d360ce50f704c}{escrever\+Mapa\+Com\+Efeitos}} (const char \texorpdfstring{$\ast$}{*}filename, \mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*}g, \mbox{\hyperlink{struct_efeito_nefasto}{Efeito\+Nefasto}} \texorpdfstring{$\ast$}{*}efeitos, int linhas, int colunas)
+\begin{DoxyCompactList}\small\item\em Escreve o mapa atualizado no ficheiro, colocando \textquotesingle{}\#\textquotesingle{} onde há efeito nefasto. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{funcao_8c_a71773f033ba730b0af01394365310164}{conectar\+Antenas\+Mesmo\+Tipo}} (\mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*}g)
+\begin{DoxyCompactList}\small\item\em Conecta automaticamente todas as antenas do mesmo tipo (frequência). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{funcao_8c_aa7943e6a1dcb02f07c4a2ac9c88d529a}{ler\+Matriz\+Antenas}} (\mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*}g, const char \texorpdfstring{$\ast$}{*}filename, int \texorpdfstring{$\ast$}{*}linhas, int \texorpdfstring{$\ast$}{*}colunas)
+\begin{DoxyCompactList}\small\item\em Lê uma matriz de antenas de um ficheiro de texto e insere no grafo. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{funcao_8c_a42bfbe95fb9429c30cf98da0b1789f89}{DFS}} (\mbox{\hyperlink{struct_v_antena}{VAntena}} \texorpdfstring{$\ast$}{*}atual)
+\begin{DoxyCompactList}\small\item\em Executa uma busca em profundidade (DFS) a partir de uma antena. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{funcao_8c_aadefc61d469e807bbf8aa474f6fa08ac}{limpar\+Visitados}} (\mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*}g)
+\begin{DoxyCompactList}\small\item\em Limpa o campo \textquotesingle{}visitado\textquotesingle{} de todas as antenas do grafo. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{funcao_8c_a29be217267833ebf2143a670d57bba9f}{imprimir\+DFS}} (\mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*}g)
+\begin{DoxyCompactList}\small\item\em Imprime o resultado do DFS para todo o grafo. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{funcao_8c_a66d6ad03390935cfd89ec4cb6d73d444}{guardar\+Binario}} (const char \texorpdfstring{$\ast$}{*}filename, \mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*}g)
+\begin{DoxyCompactList}\small\item\em Guarda o grafo num ficheiro binário. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{funcao_8c_a25889e6111d5db093e673d1fcc33aa15}{ler\+Binario}} (const char \texorpdfstring{$\ast$}{*}filename, \mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*}g)
+\begin{DoxyCompactList}\small\item\em Lê um grafo de um ficheiro binário. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{funcao_8c_af2dec3552987856cf9d7568d0e8277a7}{segmentos\+Cruzam}} (int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4, float \texorpdfstring{$\ast$}{*}ix, float \texorpdfstring{$\ast$}{*}iy)
+\begin{DoxyCompactList}\small\item\em Verifica se dois segmentos se cruzam e calcula o ponto de interseção. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{funcao_8c_ae95a091998073c68553fa97308349295}{listar\+Intersecoes\+Antenas\+Tipos}} (\mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*}g, char freq1, char freq2)
+\begin{DoxyCompactList}\small\item\em Lista as interseções entre segmentos de dois tipos de antenas. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementação das funções para manipulação de grafos de antenas. 
+
+\begin{DoxyAuthor}{Author}
+João Novais 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2025-\/05-\/18 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{funcao_8c_a8b157b93acd796197620104556b422e1}\index{funcao.c@{funcao.c}!calcularEfeitosNefastos@{calcularEfeitosNefastos}}
+\index{calcularEfeitosNefastos@{calcularEfeitosNefastos}!funcao.c@{funcao.c}}
+\doxysubsubsection{\texorpdfstring{calcularEfeitosNefastos()}{calcularEfeitosNefastos()}}
+{\footnotesize\ttfamily \label{funcao_8c_a8b157b93acd796197620104556b422e1} 
+\mbox{\hyperlink{struct_efeito_nefasto}{Efeito\+Nefasto}} \texorpdfstring{$\ast$}{*} calcular\+Efeitos\+Nefastos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*}}]{g}{, }\item[{bool \texorpdfstring{$\ast$}{*}}]{status}{}\end{DoxyParamCaption})}
+
+
+
+Calcula todos os efeitos nefastos do grafo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Ponteiro para o grafo. \\
+\hline
+{\em status} & Ponteiro para bool que indica se encontrou efeitos. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Lista ligada de efeitos nefastos encontrados, ou NULL se nenhum. 
+\end{DoxyReturn}
+\Hypertarget{funcao_8c_a71773f033ba730b0af01394365310164}\index{funcao.c@{funcao.c}!conectarAntenasMesmoTipo@{conectarAntenasMesmoTipo}}
+\index{conectarAntenasMesmoTipo@{conectarAntenasMesmoTipo}!funcao.c@{funcao.c}}
+\doxysubsubsection{\texorpdfstring{conectarAntenasMesmoTipo()}{conectarAntenasMesmoTipo()}}
+{\footnotesize\ttfamily \label{funcao_8c_a71773f033ba730b0af01394365310164} 
+bool conectar\+Antenas\+Mesmo\+Tipo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*}}]{g}{}\end{DoxyParamCaption})}
+
+
+
+Conecta automaticamente todas as antenas do mesmo tipo (frequência). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Ponteiro para o grafo. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se conectou, false se o grafo está vazio. 
+\end{DoxyReturn}
+\Hypertarget{funcao_8c_af93290ae2527806c8e233276ac56d185}\index{funcao.c@{funcao.c}!criarAntena@{criarAntena}}
+\index{criarAntena@{criarAntena}!funcao.c@{funcao.c}}
+\doxysubsubsection{\texorpdfstring{criarAntena()}{criarAntena()}}
+{\footnotesize\ttfamily \label{funcao_8c_af93290ae2527806c8e233276ac56d185} 
+\mbox{\hyperlink{struct_v_antena}{VAntena}} \texorpdfstring{$\ast$}{*} criar\+Antena (\begin{DoxyParamCaption}\item[{char}]{freq}{, }\item[{int}]{linha}{, }\item[{int}]{coluna}{}\end{DoxyParamCaption})}
+
+
+
+Cria uma nova antena. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em freq} & Frequência da antena. \\
+\hline
+{\em linha} & Linha da antena. \\
+\hline
+{\em coluna} & Coluna da antena. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ponteiro para a antena criada, ou NULL em caso de erro. 
+\end{DoxyReturn}
+\Hypertarget{funcao_8c_af5cf618621b693d94215a263da3ba5ff}\index{funcao.c@{funcao.c}!criarGrafo@{criarGrafo}}
+\index{criarGrafo@{criarGrafo}!funcao.c@{funcao.c}}
+\doxysubsubsection{\texorpdfstring{criarGrafo()}{criarGrafo()}}
+{\footnotesize\ttfamily \label{funcao_8c_af5cf618621b693d94215a263da3ba5ff} 
+\mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*} criar\+Grafo (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Cria um grafo vazio. 
+
+\begin{DoxyReturn}{Returns}
+Ponteiro para o grafo criado, ou NULL em caso de erro. 
+\end{DoxyReturn}
+\Hypertarget{funcao_8c_a217d9ca0da8de2c68c22a3f967f2090f}\index{funcao.c@{funcao.c}!CriarNafsto@{CriarNafsto}}
+\index{CriarNafsto@{CriarNafsto}!funcao.c@{funcao.c}}
+\doxysubsubsection{\texorpdfstring{CriarNafsto()}{CriarNafsto()}}
+{\footnotesize\ttfamily \label{funcao_8c_a217d9ca0da8de2c68c22a3f967f2090f} 
+\mbox{\hyperlink{struct_efeito_nefasto}{Efeito\+Nefasto}} \texorpdfstring{$\ast$}{*} Criar\+Nafsto (\begin{DoxyParamCaption}\item[{int}]{linha}{, }\item[{int}]{coluna}{}\end{DoxyParamCaption})}
+
+
+
+Cria um novo efeito nefasto. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em linha} & Linha do efeito. \\
+\hline
+{\em coluna} & Coluna do efeito. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ponteiro para o efeito criado. 
+\end{DoxyReturn}
+\Hypertarget{funcao_8c_a42bfbe95fb9429c30cf98da0b1789f89}\index{funcao.c@{funcao.c}!DFS@{DFS}}
+\index{DFS@{DFS}!funcao.c@{funcao.c}}
+\doxysubsubsection{\texorpdfstring{DFS()}{DFS()}}
+{\footnotesize\ttfamily \label{funcao_8c_a42bfbe95fb9429c30cf98da0b1789f89} 
+bool DFS (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_v_antena}{VAntena}} \texorpdfstring{$\ast$}{*}}]{atual}{}\end{DoxyParamCaption})}
+
+
+
+Executa uma busca em profundidade (DFS) a partir de uma antena. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em atual} & Ponteiro para a antena inicial. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se visitou, false caso contrário. 
+\end{DoxyReturn}
+\Hypertarget{funcao_8c_a531bf86b73f7d374e94d360ce50f704c}\index{funcao.c@{funcao.c}!escreverMapaComEfeitos@{escreverMapaComEfeitos}}
+\index{escreverMapaComEfeitos@{escreverMapaComEfeitos}!funcao.c@{funcao.c}}
+\doxysubsubsection{\texorpdfstring{escreverMapaComEfeitos()}{escreverMapaComEfeitos()}}
+{\footnotesize\ttfamily \label{funcao_8c_a531bf86b73f7d374e94d360ce50f704c} 
+void escrever\+Mapa\+Com\+Efeitos (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{filename}{, }\item[{\mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*}}]{g}{, }\item[{\mbox{\hyperlink{struct_efeito_nefasto}{Efeito\+Nefasto}} \texorpdfstring{$\ast$}{*}}]{efeitos}{, }\item[{int}]{linhas}{, }\item[{int}]{colunas}{}\end{DoxyParamCaption})}
+
+
+
+Escreve o mapa atualizado no ficheiro, colocando \textquotesingle{}\#\textquotesingle{} onde há efeito nefasto. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Nome do ficheiro a escrever. \\
+\hline
+{\em g} & Ponteiro para o grafo. \\
+\hline
+{\em efeitos} & Lista de efeitos nefastos. \\
+\hline
+{\em linhas} & Número de linhas do mapa. \\
+\hline
+{\em colunas} & Número de colunas do mapa. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{funcao_8c_a10058f40744629324ae0dec9f1a72589}\index{funcao.c@{funcao.c}!existeEfeito@{existeEfeito}}
+\index{existeEfeito@{existeEfeito}!funcao.c@{funcao.c}}
+\doxysubsubsection{\texorpdfstring{existeEfeito()}{existeEfeito()}}
+{\footnotesize\ttfamily \label{funcao_8c_a10058f40744629324ae0dec9f1a72589} 
+bool existe\+Efeito (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_efeito_nefasto}{Efeito\+Nefasto}} \texorpdfstring{$\ast$}{*}}]{lista}{, }\item[{int}]{linha}{, }\item[{int}]{coluna}{}\end{DoxyParamCaption})}
+
+
+
+Verifica se já existe um efeito nefasto numa posição. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & Lista de efeitos nefastos. \\
+\hline
+{\em linha} & Linha a verificar. \\
+\hline
+{\em coluna} & Coluna a verificar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se já existe, false caso contrário. 
+\end{DoxyReturn}
+\Hypertarget{funcao_8c_a66d6ad03390935cfd89ec4cb6d73d444}\index{funcao.c@{funcao.c}!guardarBinario@{guardarBinario}}
+\index{guardarBinario@{guardarBinario}!funcao.c@{funcao.c}}
+\doxysubsubsection{\texorpdfstring{guardarBinario()}{guardarBinario()}}
+{\footnotesize\ttfamily \label{funcao_8c_a66d6ad03390935cfd89ec4cb6d73d444} 
+bool guardar\+Binario (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{filename}{, }\item[{\mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*}}]{g}{}\end{DoxyParamCaption})}
+
+
+
+Guarda o grafo num ficheiro binário. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Nome do ficheiro binário. \\
+\hline
+{\em g} & Ponteiro para o grafo. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se guardou, false caso contrário. 
+\end{DoxyReturn}
+\Hypertarget{funcao_8c_a29be217267833ebf2143a670d57bba9f}\index{funcao.c@{funcao.c}!imprimirDFS@{imprimirDFS}}
+\index{imprimirDFS@{imprimirDFS}!funcao.c@{funcao.c}}
+\doxysubsubsection{\texorpdfstring{imprimirDFS()}{imprimirDFS()}}
+{\footnotesize\ttfamily \label{funcao_8c_a29be217267833ebf2143a670d57bba9f} 
+bool imprimir\+DFS (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*}}]{g}{}\end{DoxyParamCaption})}
+
+
+
+Imprime o resultado do DFS para todo o grafo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Ponteiro para o grafo. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true após imprimir. 
+\end{DoxyReturn}
+\Hypertarget{funcao_8c_ad0c23f36e58880b080d13826d070151b}\index{funcao.c@{funcao.c}!imprimirEfeitosNefastos@{imprimirEfeitosNefastos}}
+\index{imprimirEfeitosNefastos@{imprimirEfeitosNefastos}!funcao.c@{funcao.c}}
+\doxysubsubsection{\texorpdfstring{imprimirEfeitosNefastos()}{imprimirEfeitosNefastos()}}
+{\footnotesize\ttfamily \label{funcao_8c_ad0c23f36e58880b080d13826d070151b} 
+void imprimir\+Efeitos\+Nefastos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_efeito_nefasto}{Efeito\+Nefasto}} \texorpdfstring{$\ast$}{*}}]{lista}{}\end{DoxyParamCaption})}
+
+
+
+Imprime a lista de efeitos nefastos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & Lista de efeitos nefastos. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{funcao_8c_ab05f27279a4cc2cb1b03e00e78dfedb2}\index{funcao.c@{funcao.c}!imprimirGrafo@{imprimirGrafo}}
+\index{imprimirGrafo@{imprimirGrafo}!funcao.c@{funcao.c}}
+\doxysubsubsection{\texorpdfstring{imprimirGrafo()}{imprimirGrafo()}}
+{\footnotesize\ttfamily \label{funcao_8c_ab05f27279a4cc2cb1b03e00e78dfedb2} 
+bool imprimir\+Grafo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*}}]{g}{}\end{DoxyParamCaption})}
+
+
+
+Imprime todas as antenas e as suas ligações do grafo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Ponteiro para o grafo. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se o grafo foi a mostrado , false se o grafo está vazio ou é inválido. 
+\end{DoxyReturn}
+\Hypertarget{funcao_8c_a415e35f4b25f37909da93f6534fbe34f}\index{funcao.c@{funcao.c}!inserirAntena@{inserirAntena}}
+\index{inserirAntena@{inserirAntena}!funcao.c@{funcao.c}}
+\doxysubsubsection{\texorpdfstring{inserirAntena()}{inserirAntena()}}
+{\footnotesize\ttfamily \label{funcao_8c_a415e35f4b25f37909da93f6534fbe34f} 
+bool inserir\+Antena (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*}}]{g}{, }\item[{char}]{freq}{, }\item[{int}]{linha}{, }\item[{int}]{coluna}{}\end{DoxyParamCaption})}
+
+
+
+Insere uma antena no grafo, se a posição estiver livre. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Ponteiro para o grafo. \\
+\hline
+{\em freq} & Frequência da antena. \\
+\hline
+{\em linha} & Linha da antena. \\
+\hline
+{\em coluna} & Coluna da antena. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se inserido, false caso contrário. 
+\end{DoxyReturn}
+\Hypertarget{funcao_8c_ab8aa9d7dabc8bc0a56cd3704e90198bf}\index{funcao.c@{funcao.c}!inserirEfeito@{inserirEfeito}}
+\index{inserirEfeito@{inserirEfeito}!funcao.c@{funcao.c}}
+\doxysubsubsection{\texorpdfstring{inserirEfeito()}{inserirEfeito()}}
+{\footnotesize\ttfamily \label{funcao_8c_ab8aa9d7dabc8bc0a56cd3704e90198bf} 
+\mbox{\hyperlink{struct_efeito_nefasto}{Efeito\+Nefasto}} \texorpdfstring{$\ast$}{*} inserir\+Efeito (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_efeito_nefasto}{Efeito\+Nefasto}} \texorpdfstring{$\ast$}{*}}]{lista}{, }\item[{int}]{linha}{, }\item[{int}]{coluna}{, }\item[{char}]{freq}{}\end{DoxyParamCaption})}
+
+
+
+Insere um efeito nefasto na lista. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lista} & Lista de efeitos nefastos. \\
+\hline
+{\em linha} & Linha do novo efeito. \\
+\hline
+{\em coluna} & Coluna do novo efeito. \\
+\hline
+{\em freq} & Frequência associada ao efeito. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ponteiro para o início da lista atualizada. 
+\end{DoxyReturn}
+\Hypertarget{funcao_8c_a25889e6111d5db093e673d1fcc33aa15}\index{funcao.c@{funcao.c}!lerBinario@{lerBinario}}
+\index{lerBinario@{lerBinario}!funcao.c@{funcao.c}}
+\doxysubsubsection{\texorpdfstring{lerBinario()}{lerBinario()}}
+{\footnotesize\ttfamily \label{funcao_8c_a25889e6111d5db093e673d1fcc33aa15} 
+bool ler\+Binario (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{filename}{, }\item[{\mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*}}]{g}{}\end{DoxyParamCaption})}
+
+
+
+Lê um grafo de um ficheiro binário. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Nome do ficheiro binário. \\
+\hline
+{\em g} & Ponteiro para o grafo. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se leu, false caso contrário. 
+\end{DoxyReturn}
+\Hypertarget{funcao_8c_aa7943e6a1dcb02f07c4a2ac9c88d529a}\index{funcao.c@{funcao.c}!lerMatrizAntenas@{lerMatrizAntenas}}
+\index{lerMatrizAntenas@{lerMatrizAntenas}!funcao.c@{funcao.c}}
+\doxysubsubsection{\texorpdfstring{lerMatrizAntenas()}{lerMatrizAntenas()}}
+{\footnotesize\ttfamily \label{funcao_8c_aa7943e6a1dcb02f07c4a2ac9c88d529a} 
+bool ler\+Matriz\+Antenas (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*}}]{g}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{filename}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{linhas}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{colunas}{}\end{DoxyParamCaption})}
+
+
+
+Lê uma matriz de antenas de um ficheiro de texto e insere no grafo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Ponteiro para o grafo. \\
+\hline
+{\em filename} & Nome do ficheiro de texto. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se leu e inseriu com sucesso, false caso contrário. 
+\end{DoxyReturn}
+\Hypertarget{funcao_8c_aadefc61d469e807bbf8aa474f6fa08ac}\index{funcao.c@{funcao.c}!limparVisitados@{limparVisitados}}
+\index{limparVisitados@{limparVisitados}!funcao.c@{funcao.c}}
+\doxysubsubsection{\texorpdfstring{limparVisitados()}{limparVisitados()}}
+{\footnotesize\ttfamily \label{funcao_8c_aadefc61d469e807bbf8aa474f6fa08ac} 
+bool limpar\+Visitados (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*}}]{g}{}\end{DoxyParamCaption})}
+
+
+
+Limpa o campo \textquotesingle{}visitado\textquotesingle{} de todas as antenas do grafo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Ponteiro para o grafo. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true após limpar. 
+\end{DoxyReturn}
+\Hypertarget{funcao_8c_ae95a091998073c68553fa97308349295}\index{funcao.c@{funcao.c}!listarIntersecoesAntenasTipos@{listarIntersecoesAntenasTipos}}
+\index{listarIntersecoesAntenasTipos@{listarIntersecoesAntenasTipos}!funcao.c@{funcao.c}}
+\doxysubsubsection{\texorpdfstring{listarIntersecoesAntenasTipos()}{listarIntersecoesAntenasTipos()}}
+{\footnotesize\ttfamily \label{funcao_8c_ae95a091998073c68553fa97308349295} 
+bool listar\+Intersecoes\+Antenas\+Tipos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*}}]{g}{, }\item[{char}]{freq1}{, }\item[{char}]{freq2}{}\end{DoxyParamCaption})}
+
+
+
+Lista as interseções entre segmentos de dois tipos de antenas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Ponteiro para o grafo. \\
+\hline
+{\em freq1} & Frequência do primeiro tipo de antena. \\
+\hline
+{\em freq2} & Frequência do segundo tipo de antena. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se encontrou interseções, false caso contrário. 
+\end{DoxyReturn}
+\Hypertarget{funcao_8c_a5bc5848d0511185756a52aff74979435}\index{funcao.c@{funcao.c}!posicaoOcupada@{posicaoOcupada}}
+\index{posicaoOcupada@{posicaoOcupada}!funcao.c@{funcao.c}}
+\doxysubsubsection{\texorpdfstring{posicaoOcupada()}{posicaoOcupada()}}
+{\footnotesize\ttfamily \label{funcao_8c_a5bc5848d0511185756a52aff74979435} 
+bool posicao\+Ocupada (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*}}]{g}{, }\item[{int}]{linha}{, }\item[{int}]{coluna}{}\end{DoxyParamCaption})}
+
+
+
+Verifica se já existe uma antena na posição dada. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Ponteiro para o grafo. \\
+\hline
+{\em linha} & Linha a verificar. \\
+\hline
+{\em coluna} & Coluna a verificar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se a posição está ocupada, false caso contrário. 
+\end{DoxyReturn}
+\Hypertarget{funcao_8c_a7a6da1fda39659501215074d3a8788ac}\index{funcao.c@{funcao.c}!removerAdjacente@{removerAdjacente}}
+\index{removerAdjacente@{removerAdjacente}!funcao.c@{funcao.c}}
+\doxysubsubsection{\texorpdfstring{removerAdjacente()}{removerAdjacente()}}
+{\footnotesize\ttfamily \label{funcao_8c_a7a6da1fda39659501215074d3a8788ac} 
+bool remover\+Adjacente (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_v_antena}{VAntena}} \texorpdfstring{$\ast$}{*}}]{origem}{, }\item[{\mbox{\hyperlink{struct_v_antena}{VAntena}} \texorpdfstring{$\ast$}{*}}]{destino}{}\end{DoxyParamCaption})}
+
+
+
+Remove a ligação de origem para destino. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em origem} & Ponteiro para a antena de origem. \\
+\hline
+{\em destino} & Ponteiro para a antena de destino. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se a ligação foi removida, false se não existia. 
+\end{DoxyReturn}
+\Hypertarget{funcao_8c_a35f1b501b4bce2e84a31e05c7d927b44}\index{funcao.c@{funcao.c}!RemoverAntena@{RemoverAntena}}
+\index{RemoverAntena@{RemoverAntena}!funcao.c@{funcao.c}}
+\doxysubsubsection{\texorpdfstring{RemoverAntena()}{RemoverAntena()}}
+{\footnotesize\ttfamily \label{funcao_8c_a35f1b501b4bce2e84a31e05c7d927b44} 
+bool Remover\+Antena (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*}}]{g}{, }\item[{char}]{freq}{, }\item[{int}]{linha}{, }\item[{int}]{coluna}{}\end{DoxyParamCaption})}
+
+
+
+Remove uma antena da lista ligada do grafo (não remove adjacências). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Ponteiro para o grafo. \\
+\hline
+{\em freq} & Frequência da antena. \\
+\hline
+{\em linha} & Linha da antena. \\
+\hline
+{\em coluna} & Coluna da antena. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se removido, false se não encontrado. 
+\end{DoxyReturn}
+\Hypertarget{funcao_8c_ab7c88f6d161bedc19b108cfadc221194}\index{funcao.c@{funcao.c}!removerVertice@{removerVertice}}
+\index{removerVertice@{removerVertice}!funcao.c@{funcao.c}}
+\doxysubsubsection{\texorpdfstring{removerVertice()}{removerVertice()}}
+{\footnotesize\ttfamily \label{funcao_8c_ab7c88f6d161bedc19b108cfadc221194} 
+bool remover\+Vertice (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_grafo}{Grafo}} \texorpdfstring{$\ast$}{*}}]{g}{, }\item[{char}]{freq}{, }\item[{int}]{linha}{, }\item[{int}]{coluna}{}\end{DoxyParamCaption})}
+
+
+
+Remove um vértice (antena) do grafo, removendo também todas as adjacências para ele. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Ponteiro para o grafo. \\
+\hline
+{\em freq} & Frequência da antena a remover. \\
+\hline
+{\em linha} & Linha da antena a remover. \\
+\hline
+{\em coluna} & Coluna da antena a remover. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se removido, false se não encontrado. 
+\end{DoxyReturn}
+\Hypertarget{funcao_8c_af2dec3552987856cf9d7568d0e8277a7}\index{funcao.c@{funcao.c}!segmentosCruzam@{segmentosCruzam}}
+\index{segmentosCruzam@{segmentosCruzam}!funcao.c@{funcao.c}}
+\doxysubsubsection{\texorpdfstring{segmentosCruzam()}{segmentosCruzam()}}
+{\footnotesize\ttfamily \label{funcao_8c_af2dec3552987856cf9d7568d0e8277a7} 
+bool segmentos\+Cruzam (\begin{DoxyParamCaption}\item[{int}]{x1}{, }\item[{int}]{y1}{, }\item[{int}]{x2}{, }\item[{int}]{y2}{, }\item[{int}]{x3}{, }\item[{int}]{y3}{, }\item[{int}]{x4}{, }\item[{int}]{y4}{, }\item[{float \texorpdfstring{$\ast$}{*}}]{ix}{, }\item[{float \texorpdfstring{$\ast$}{*}}]{iy}{}\end{DoxyParamCaption})}
+
+
+
+Verifica se dois segmentos se cruzam e calcula o ponto de interseção. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x1,y1,x2,y2} & Coordenadas do primeiro segmento. \\
+\hline
+{\em x3,y3,x4,y4} & Coordenadas do segundo segmento. \\
+\hline
+{\em ix} & Ponteiro para guardar a coordenada x da interseção. \\
+\hline
+{\em iy} & Ponteiro para guardar a coordenada y da interseção. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se cruzam, false caso contrário. 
+\end{DoxyReturn}
